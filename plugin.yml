@@ -1,0 +1,15 @@
+name: SetHDB
+version: ${project.version}
+main: com.github.mcdaddytalk.sethdb.SetHDB
+api-version: 1.16
+depend: [HeadDatabase, PlaceholderAPI]
+softdepend: []
+authors: [MCDaddyTalk]
+description: Plugin to allow use of setblock using a HDB id
+website: https://github.com/mcdaddytalk/setHDB
+commands:
+  sethdb:
+    description: This is a demo command.
+    usage: /sethdb [id] [x] [y] [z] <rotation>
+    permission: sethdb.use
+    permission-message: You don't have <permission>
