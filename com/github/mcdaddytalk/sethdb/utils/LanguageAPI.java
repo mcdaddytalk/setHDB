@@ -66,7 +66,7 @@ public class LanguageAPI {
     /**
      * Initializes the Placeholders for the Lang Message.
      *
-     * @param placeHolder - Placeholders to be placed into the Langugage Message.
+     * @param placeHolder - Placeholders to be placed into the Language Message.
      */
     private String[] initializeRows(final String...placeHolder) {
         if (placeHolder == null || placeHolder.length != this.newString().length) {
@@ -90,7 +90,7 @@ public class LanguageAPI {
      * Translates the Language PlaceHolders into the actual Placeholders defined for the Message.
      *
      * @param langMessage - The Message being sent.
-     * @param langHolder - Placeholders to be placed into the Langugage Message.
+     * @param langHolder - Placeholders to be placed into the Language Message.
      */
     private String translateLangHolders(final String langMessage, final String...langHolder) {
         return langMessage

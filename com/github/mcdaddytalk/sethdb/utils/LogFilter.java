@@ -52,7 +52,7 @@ public class LogFilter extends AbstractFilter {
      * @param logger - The logger handling the message.
      * @param level - The level of execution.
      * @param marker - The filter marker.
-     * @param msg - The message catched by the filter.
+     * @param msg - The message caught by the filter.
      * @param t - The cached Throwable.
      * @return The result of the filter.
      */
@@ -67,7 +67,7 @@ public class LogFilter extends AbstractFilter {
      * @param logger - The logger handling the message.
      * @param level - The level of execution.
      * @param marker - The filter marker.
-     * @param msg - The message catched by the filter.
+     * @param msg - The message caught by the filter.
      * @param t - The cached Throwable.
      * @return The result of the filter.
      */
@@ -82,7 +82,7 @@ public class LogFilter extends AbstractFilter {
      * @param logger - The logger handling the message.
      * @param level - The level of execution.
      * @param marker - The filter marker.
-     * @param msg - The message catched by the filter.
+     * @param msg - The message caught by the filter.
      * @param params - The filter parameters.
      * @return The result of the filter.
      */

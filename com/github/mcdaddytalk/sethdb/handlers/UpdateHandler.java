@@ -18,10 +18,10 @@ import java.util.Collection;
 public class UpdateHandler {
 
     private final String AUTOQUERY = "sethdb/files/latest";
-    private final String AUTOHOST = "http://localhost:3000/";
+    private final String AUTOHOST = "http://www.kaje.org:3000/";
     private final int PROJECTID = 527526;
     //private final String HOST = "https://api.spigotmc.org/legacy/update.php?resource=" + this.PROJECTID;
-    private final String HOST = "http://localhost:3000/versions?resource=" + this.PROJECTID;
+    private final String HOST = "http://www.kaje.org:3000/versions?resource=" + this.PROJECTID;
 
     private String versionExact = SetHDB.getInstance().getDescription().getVersion();
     private String localeVersionRaw = this.versionExact.split("-")[0];
@@ -109,7 +109,7 @@ public class UpdateHandler {
                 ServerHandler.getServer().messageSender(sender, "&cYour current version: &bv" + this.localeVersionRaw);
             }
             ServerHandler.getServer().messageSender(sender, "&cA new version is available: " + "&av" + this.latestVersionRaw);
-            ServerHandler.getServer().messageSender(sender, "&aGet it from: https://www.spigotmc.org/resources/sethdb.99999/history");
+            ServerHandler.getServer().messageSender(sender, "&aGet it from: https://www.kaje.org:3000/sethdb/files/latest");
             ServerHandler.getServer().messageSender(sender, "&aIf you wish to auto update, please type /setHDB AutoUpdate");
             this.sendNotifications();
         } else if (this.updatesAllowed) {

@@ -9,39 +9,19 @@ public class PermissionsHandler {
     private static PermissionsHandler permissions;
 
     /**
-     * Checks if the permission is a custom permission.
-     * This fetches the proper permission node, so if a custom permission is not
-     * defined for the item, it returns the default permission node itemjoin.world.itemname.
-     *
-     * @param permissionNode - The custom permission node for the item.
-     * @param item - The node of the current item.
-     * @param worldName - The name of the current world.
-     * @return The permission node of the item.
-     */
-    public String customPermissions(final String permissionNode, final String item, final String worldName) {
-        if (permissionNode != null) {
-            return permissionNode;
-        }
-        return "itemjoin." + worldName + "." + item;
-    }
-
-    /**
-     * Gives all ItemJoin items to the specified player.
+     * Gives all sethdb items to the specified player.
      *
      * @param sender - The entity that is having their permissions checked.
      * @param permission - The permission the sender is expected to have.
      * @return If the entity has the proper permission.
      */
     public boolean hasPermission(final CommandSender sender, final String permission) {
-        if (sender.hasPermission(permission) || sender.hasPermission("itemjoin.*") || sender.hasPermission("itemjoin.all") || isDeveloper(sender) || (sender instanceof ConsoleCommandSender)) {
+        if (sender.hasPermission(permission) || sender.hasPermission("sethdb.*") || sender.hasPermission("sethdb.all") || isDeveloper(sender) || (sender instanceof ConsoleCommandSender)) {
             return true;
         } else if (!ConfigHandler.getConfig(false).getFile("config.yml").getBoolean("Permissions.Commands-OP") && sender.isOp()) {
-            if (permission.equalsIgnoreCase("itemjoin.use") || permission.equalsIgnoreCase("itemjoin.reload") || permission.equalsIgnoreCase("itemjoin.updates")
-                    || permission.equalsIgnoreCase("itemjoin.autoupdate") || permission.equalsIgnoreCase("itemjoin.menu")
-                    || permission.equalsIgnoreCase("itemjoin.purge") || permission.equalsIgnoreCase("itemjoin.get") || permission.equalsIgnoreCase("itemjoin.get.others")
-                    || permission.equalsIgnoreCase("itemjoin.remove") || permission.equalsIgnoreCase("itemjoin.remove.others") || permission.equalsIgnoreCase("itemjoin.disable")
-                    || permission.equalsIgnoreCase("itemjoin.disable.others") || permission.equalsIgnoreCase("itemjoin.enable") || permission.equalsIgnoreCase("itemjoin.enable.others")
-                    || permission.equalsIgnoreCase("itemjoin.list")) {
+            if (permission.equalsIgnoreCase("sethdb.use") || permission.equalsIgnoreCase("sethdb.reload") || permission.equalsIgnoreCase("sethdb.updates")
+                    || permission.equalsIgnoreCase("sethdb.permissions")
+                    || permission.equalsIgnoreCase("sethdb.autoupdate")) {
                 return true;
             }
         }
@@ -63,15 +43,6 @@ public class PermissionsHandler {
             }
         }
         return false;
-    }
-
-    /**
-     * Checks if custom items have permission requirements to get or use them.
-     *
-     * @return If the custom items require certain permissions to be given or used.
-     */
-    public boolean receiveEnabled() {
-        return ConfigHandler.getConfig(false).getFile("config.yml").getBoolean("Permissions.Commands-Get");
     }
 
     /**
